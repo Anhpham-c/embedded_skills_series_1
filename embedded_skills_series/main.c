@@ -16,9 +16,9 @@ void main(void) {
     config_ACLK_to_32KHz();                     // configure timer source
 
     // Configure timer A
-    TA0CCR0 |= 32000; // counter
+    TA0CCR0 |= 400; // counter
     TA0CCTL0 |= CCIE; // enable CCIE bit
-    TA0CCTL0 &= CCIFG;  // clear CCIFG bit
+    TA0CCTL0 &= ~CCIFG;  // clear CCIFG bit
 
     // Timer_A configuration (fill the line below)
     // Use ACLK, divide by 1, up mode, clear TAR
